@@ -112,6 +112,8 @@ function render(d){
     });
     h += '</div>';
   });
+  if (d.cut) h += '<div class="empty">' + d.cut
+    + ' purane link hadd (' + d.max + ') se bahar ho gaye. LIVE_MAX barha do.</div>';
   h += '<div class="foot">Har batch ka ek waqt = jab wo links chadhe &middot; '
     + 'sirf naye sponsored &middot; '
     + 'har batch apne upload ke ' + d.hours + ' ghante baad khud saaf '
@@ -119,7 +121,7 @@ function render(d){
   document.body.innerHTML = h;
 }
 
-const SALT="xpeNBs6vZCNyX5zjbsSJpA==", IV="egUcm+UaxiF4lY3z", CT="vpYwIN8oXLyUPn2zHwIS11iz7MJedvmFMzfDH9TS83V7ekHixkEhAZzKWAvlciVdtcaRe3l3iZaCOonszSddLxG0A5q84typYTrw65WXR2iqVGPXhSQYJndg6g==", REFRESH=60;
+const SALT="udFNK8P7xtQKSF+iqQRrAA==", IV="3Tjm0LVQ/6zzGYxF", CT="DC+PF7IeMotEk2Cv1pfwnInCose+EsoDX+++faR0eGlCESdnsHL+DldATcXkBQcVWmsY5GUwYTdIfjjV/gkndNSzhaJRgMjH3xOlGOGPed7VDm5XTeSt2daTHq4qfIz+jiQr93IRdRRbR+fkCODO", REFRESH=60;
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
 
 async function open_(pw){
